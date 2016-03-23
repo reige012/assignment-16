@@ -5,7 +5,7 @@ The cites list of Peruvian birds is only accessible online in pdf format, so the
 of this program (Andre Moncrieff) copied and pasted the pdf contents onto an excel 
 spreadsheet, resulting in a cluttered and poorly-formatted file (hereafter "raw cites").
 
-#####Objectives of program, corresponding to the 6 (non-main) functions it contains.
+#####Objectives of program, corresponding to the 6 (non-main) functions it contains:
 1. Pull species names from "raw cites" and store in memory in a list.
 2. Write this list to a new excel file.
 3. Pull species names from an excel file of Peru ornithological expedition data
