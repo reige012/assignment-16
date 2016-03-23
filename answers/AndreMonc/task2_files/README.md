@@ -102,7 +102,8 @@ def make_trip_list(filename):
 
 ###Function 4:
 *Objective:* Count the number of individuals per species from the expedition list, and store 
-results in a dictionary (e.g. `{"Species name": [5]}`).
+results in a dictionary (e.g. `{"Species name": [5]}`). The `some_trip_list` passed to 
+this function must be in the format of the output from Function 1.
 ```
 def trip_list_counted(some_trip_list):
     species_count = []
@@ -138,7 +139,7 @@ def add_cites_status_to_dict(trip_num_dict, cites_list):
             trip_num_dict[key].append("No Cites")
     return trip_num_dict
 ```
-#####Example of output (trip_num_dict):
+#####Example of output:
 ```
 {'Anisognathus somptuosus': [4, 'No Cites'], 'Phaethornis hispidus': [2, 'Cites'], 
 'Heliodoxa branickii': [1, 'Cites'], 'Cranioleuca vulpecula': [9, 'No Cites'], 
@@ -148,7 +149,7 @@ def add_cites_status_to_dict(trip_num_dict, cites_list):
 ```
 
 ###Function 6:
-*Objective:* Write this dictionary to a csv file. (Column1 = species name, Column2 = 
+*Objective:* Write output of Function 5 to a csv file. (Column1 = species name, Column2 = 
 number of individuals per species, Column3 = Cites Status.) *Tips:* The `final_dict` 
 passed to this function must be in the format of the output from Function 5.
 ```
@@ -158,7 +159,7 @@ def write_summary_to_csv(final_dict):
     for key, value in final_dict.items():
         writer.writerow([key, value[0], value[1]])
 ```
-#####Example of output (written into csv file):
+#####Example of output (written to csv file):
 ```
 Species,Number Collected,Cites Status
 Anisognathus somptuosus,4,No Cites
