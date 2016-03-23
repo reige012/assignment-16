@@ -1,4 +1,4 @@
-#Cites_task2.py - A python program to manipulate and interact with the Cites list of Peruvian birds, December 2014. 
+#Cites_task2.py - A python program to manipulate and interact with the December 2014 Cites list of Peruvian birds 
 
 ##Introduction
 The cites list of Peruvian birds is only accessible online in pdf format, so the author 
