@@ -30,6 +30,10 @@ class TestTask2(unittest.TestCase):
         observed = task2.listify('name, item \n name2, item2')
         self.addTypeEqualityFunc(list, observed)
 
+    def test_lists_c_name(self):
+        """test that data type is correct"""
+        pass
+
     def test_array(self):
         """ test that data type is correct"""
         observed = task2.array([['name, item'], ['name2, item2']])
@@ -37,14 +41,18 @@ class TestTask2(unittest.TestCase):
 
     def test_data_frame1(self):
         """ test that data type is correct"""
+        cols = numpy.arange(0, 35)
         observed = task2.data_frame(numpy.array([['name, item'],
-                                                 ['name2, item2']]))
+                                                 ['name2, item2']]),
+                                                 cols)
         self.addTypeEqualityFunc(pandas.core.frame.DataFrame, observed)
 
     def test_data_frame2(self):
         """test that length is correct"""
+        cols = numpy.arange(0, 35)
         observed = len(task2.data_frame(numpy.array([['name', 'item'],
-                                                     ['name2', 'item2']])))
+                                                     ['name2', 'item2']])),
+                                                     cols)
         self.assertEqual(observed, 2)
 
     def test_get_family(self):
@@ -61,10 +69,14 @@ class TestTask2(unittest.TestCase):
         my_file = open('Aves_Database_Aug_2015.csv', 'r')
         l = task2.listify(my_file)
         my_file.close()
-        x = task2.array(l)
-        a = task2.data_frame(x)
+        a = pandas.DataFrame(numpy.array(l))
         observed = task2.get_species(a)
         self.assertIn('Mimus_gilvus', observed)
+
+    def test_pearson_coof(self):
+        """
+        """
+        pass
 
 if __name__ == '__main__':
     unittest.main()

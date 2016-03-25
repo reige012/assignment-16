@@ -33,15 +33,28 @@ def listify(file):
     return my_lists
 
 
+def lists_c_name(file):
+    """
+    takes input .csv file and splits on commas
+    returns list of lists, pertaining to rows in file
+    starting at common name and including only the data
+    """
+    my_lists = []
+    for line in file:
+        l = line.split(',')
+        my_lists.append(l[6:])
+    return my_lists
+
+
 def array(my_list):
     """convert list to numpy array"""
     array = np.array(my_list)
     return array
 
 
-def data_frame(array):
-    """takes array and converts ot pandas dataframe"""
-    data_frame = DataFrame(array)
+def data_frame(array, l):
+    """takes array or list and converts ot pandas dataframe"""
+    data_frame = DataFrame(array, columns = l)
     return data_frame
 
 
@@ -58,7 +71,7 @@ def get_family(array):
 
 def get_species(data_frame):
     """
-    takes pandas DataFrame and returns a list of the species in the database
+    takes pandas DataFrame and returns a set of the species in the database
     """
     combined = data_frame[3] + "_" + data_frame[4]
     l = list(combined)
@@ -67,14 +80,31 @@ def get_species(data_frame):
     return s
 
 
+def pearson_coof(array, col1, col2):
+    """
+    takes an array and which columns you wish to correlate
+    returns the pearson product-moment correlation coefficient
+    """
+    x = array[1:, col1]
+    y = array[1:, col2]
+    value = np.corrcoef(x, y, rowvar=0)
+    return value
+    return x, y
+
 def main():
     my_file = open('Aves_Database_Aug_2015.csv', 'r')
     lists = listify(my_file)
     my_array = array(lists)
-    df = data_frame(my_array)
+    l_cname = lists_c_name(my_file)
+    l = l_cname.pop(0)
+    df = data_frame(l_cname, l)
+    # add index by common name
+    df.index = df['common_name']
+    df.pop('common_name')
     families = get_family(my_array)
-    species = get_species(df)
-
+    species = get_species(DataFrame(my_array))
+    pear = pearson_coof(my_array, 10, 16)
+    print("the correlation coefficient of adult mass and egg mass is: {}".format(pear))
 
 if __name__ == '__main__':
     main()
