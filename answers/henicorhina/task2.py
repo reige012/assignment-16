@@ -7,12 +7,12 @@ Oscar Johnson 24 March 2016
 
 Copyright Oscar Johnson 2016
 
-Analysis of avian life history data using the database 
+Analysis of avian life history data using the database
 compiled by Myhrvold et al. 2015:
 
-Nathan P. Myhrvold, Elita Baldridge, Benjamin Chan, Dhileep Sivam, Daniel L. 
-Freeman, and S. K. Morgan Ernest. 2015. An amniote life-history database to 
-perform comparative analyses with birds, mammals, and reptiles. Ecology 
+Nathan P. Myhrvold, Elita Baldridge, Benjamin Chan, Dhileep Sivam, Daniel L.
+Freeman, and S. K. Morgan Ernest. 2015. An amniote life-history database to
+perform comparative analyses with birds, mammals, and reptiles. Ecology
 96:3109. http://dx.doi.org/10.1890/15-0846.1
 """
 
@@ -49,7 +49,7 @@ def get_family(array):
     """
     takes numpy array and returns a list of the family names in the database
     """
-    f = array[:,2]
+    f = array[:, 2]
     l = list(f)
     s = set(l)
     # print(s)
@@ -58,7 +58,7 @@ def get_family(array):
 
 def get_species(data_frame):
     """
-    takes pandas DataFrame and returns a list of the species in the database    
+    takes pandas DataFrame and returns a list of the species in the database
     """
     combined = data_frame[3] + "_" + data_frame[4]
     l = list(combined)
@@ -68,7 +68,7 @@ def get_species(data_frame):
 
 
 def main():
-    my_file = open('/Users/home/Biol7800/assignment-16/answers/henicorhina/Aves_Database_Aug_2015.csv', 'r')
+    my_file = open('Aves_Database_Aug_2015.csv', 'r')
     lists = listify(my_file)
     my_array = array(lists)
     df = data_frame(my_array)
