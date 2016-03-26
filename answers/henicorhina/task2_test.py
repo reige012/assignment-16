@@ -30,29 +30,29 @@ class TestTask2(unittest.TestCase):
         observed = task2.listify('name, item \n name2, item2')
         self.addTypeEqualityFunc(list, observed)
 
-    def test_lists_c_name(self):
+    def test_lists_df(self):
         """test that data type is correct"""
-        pass
+        my_file = open('Aves_Database_Aug_2015.csv', 'r')
+        observed = task2.lists_df(my_file)
+        self.addTypeEqualityFunc(list, observed[0])
 
     def test_array(self):
         """ test that data type is correct"""
         observed = task2.array([['name, item'], ['name2, item2']])
         self.addTypeEqualityFunc(numpy.ndarray, observed)
 
-    def test_data_frame1(self):
+    def test_frame1(self):
         """ test that data type is correct"""
         cols = numpy.arange(0, 35)
-        observed = task2.data_frame(numpy.array([['name, item'],
-                                                 ['name2, item2']]),
-                                                 cols)
+        observed = task2.frame(numpy.array([['name, item'],
+                                                 ['name2, item2']]))
         self.addTypeEqualityFunc(pandas.core.frame.DataFrame, observed)
 
-    def test_data_frame2(self):
+    def test_frame2(self):
         """test that length is correct"""
         cols = numpy.arange(0, 35)
-        observed = len(task2.data_frame(numpy.array([['name', 'item'],
-                                                     ['name2', 'item2']])),
-                                                     cols)
+        observed = len(task2.frame(numpy.array([['name', 'item'],
+                                                     ['name2', 'item2']])))
         self.assertEqual(observed, 2)
 
     def test_get_family(self):

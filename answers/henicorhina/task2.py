@@ -33,17 +33,21 @@ def listify(file):
     return my_lists
 
 
-def lists_c_name(file):
+def lists_df(file):
     """
     takes input .csv file and splits on commas
     returns list of lists, pertaining to rows in file
-    starting at common name and including only the data
+    also returns index and column values for pandas DataFrame    
     """
     my_lists = []
+    index = []
     for line in file:
+        line.strip('\n')
         l = line.split(',')
-        my_lists.append(l[6:])
-    return my_lists
+        my_lists.append(l[7:])
+        index.append(l[6])
+    cols = my_lists.pop(0)
+    return my_lists, index, cols
 
 
 def array(my_list):
@@ -52,9 +56,9 @@ def array(my_list):
     return array
 
 
-def data_frame(array, l):
+def frame(array):
     """takes array or list and converts ot pandas dataframe"""
-    data_frame = DataFrame(array, columns = l)
+    data_frame = DataFrame(array)
     return data_frame
 
 
@@ -91,20 +95,21 @@ def pearson_coof(array, col1, col2):
     return value
     return x, y
 
+
 def main():
     my_file = open('Aves_Database_Aug_2015.csv', 'r')
     lists = listify(my_file)
     my_array = array(lists)
-    l_cname = lists_c_name(my_file)
-    l = l_cname.pop(0)
-    df = data_frame(l_cname, l)
+    frame(my_array)
+    l_cname = lists_df(my_file)
+    my_file.close()
     # add index by common name
-    df.index = df['common_name']
-    df.pop('common_name')
     families = get_family(my_array)
     species = get_species(DataFrame(my_array))
     pear = pearson_coof(my_array, 10, 16)
     print("the correlation coefficient of adult mass and egg mass is: {}".format(pear))
+    # convert to DataFrame with appropriate indices columns
+    data_frame = DataFrame(l_cname[0], index=l_cname[1][1:], columns=l_cname[2])
 
 if __name__ == '__main__':
     main()
