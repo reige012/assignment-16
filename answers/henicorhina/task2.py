@@ -16,7 +16,6 @@ perform comparative analyses with birds, mammals, and reptiles. Ecology
 96:3109. http://dx.doi.org/10.1890/15-0846.1
 """
 
-import matplotlib.pyplot as plt
 import numpy as np
 import pdb
 from pandas import DataFrame
@@ -38,7 +37,7 @@ def lists_df(mfile):
     """
     takes input .csv file and splits on commas
     returns list of lists, pertaining to rows in file
-    also returns index and column values for pandas DataFrame    
+    also returns index and column values for pandas DataFrame
     """
     my_lists = []
     index = []
@@ -106,18 +105,22 @@ def pearson_cooef(x, y):
 
 
 def main():
-    my_file = open('/Users/home/Biol7800/assignment-16/answers/henicorhina/Aves_Database_Aug_2015.csv', 'r')
-    lists = listify(my_file)
-    my_array = array(lists)
-    # pdb.set_trace()
-    l_cname = lists_df(my_file)
-    l_1 = l_cname[1][1:]  # corrects a minor error in lists_df
-    df = frame(l_cname[0], l_1, l_cname[2])
-    families = get_family(my_array)
-    species = get_species(DataFrame(my_array))
-    pear = pearson_cooef(df.egg_mass_g, df.adult_body_mass_g)
-    print("the correlation coefficient of adult mass and egg mass is: {}".format(pear[0][1]))
-    my_file.close()
+    with open('Aves_Database_Aug_2015.csv', 'r') as my_file:
+        l_cname = lists_df(my_file)
+        # pdb.set_trace()
+        l_1 = l_cname[1][1:]  # corrects a minor error in lists_df
+        df = frame(l_cname[0], l_1, l_cname[2])
+        pear = pearson_cooef(df.egg_mass_g, df.adult_body_mass_g)
+        print("""the correlation coefficient of adult mass and egg mass is:
+        {}""".format(pear[0][1]))
+    with open('Aves_Database_Aug_2015.csv', 'r') as my_file2:
+        lists = listify(my_file2)
+        my_array = array(lists)
+        families = get_family(my_array)
+        species = get_species(DataFrame(my_array))
+        print("""your dataset includes:
+        {} families
+        and {} species""".format(len(families), len(species)))
 
 if __name__ == '__main__':
     main()

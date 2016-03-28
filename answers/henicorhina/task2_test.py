@@ -45,14 +45,14 @@ class TestTask2(unittest.TestCase):
         """ test that data type is correct"""
         cols = numpy.arange(0, 35)
         observed = task2.frame(numpy.array([['name, item'],
-                                                 ['name2, item2']]))
+                                            ['name2, item2']]))
         self.addTypeEqualityFunc(pandas.core.frame.DataFrame, observed)
 
     def test_frame2(self):
         """test that length is correct"""
         cols = numpy.arange(0, 35)
         observed = len(task2.frame(numpy.array([['name', 'item'],
-                                                     ['name2', 'item2']])))
+                                                ['name2', 'item2']])))
         self.assertEqual(observed, 2)
 
     def test_get_family(self):
