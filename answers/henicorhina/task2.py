@@ -18,6 +18,7 @@ perform comparative analyses with birds, mammals, and reptiles. Ecology
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pdb
 from pandas import DataFrame
 
 
@@ -33,7 +34,7 @@ def listify(file):
     return my_lists
 
 
-def lists_df(file):
+def lists_df(mfile):
     """
     takes input .csv file and splits on commas
     returns list of lists, pertaining to rows in file
@@ -41,13 +42,21 @@ def lists_df(file):
     """
     my_lists = []
     index = []
-    for line in file:
+    for line in mfile:
         line.strip('\n')
+        line.replace('-999', '0')
         l = line.split(',')
         my_lists.append(l[7:])
         index.append(l[6])
-    cols = my_lists.pop(0)
-    return my_lists, index, cols
+    new_line = []
+    for lines in my_lists[1:]:
+        li = []
+        for val in lines[0:]:
+            li.append(float(val))
+        new_line.append(li)
+    # pdb.set_trace()
+    cols = my_lists[0]
+    return new_line, index, cols
 
 
 def array(my_list):
@@ -56,9 +65,12 @@ def array(my_list):
     return array
 
 
-def frame(array):
-    """takes array or list and converts ot pandas dataframe"""
-    data_frame = DataFrame(array)
+def frame(array, i, c):
+    """
+    takes array or list and converts ot pandas dataframe
+    i = index of rows, c = columns
+    """
+    data_frame = DataFrame(array, index=i, columns=c)
     return data_frame
 
 
@@ -69,7 +81,7 @@ def get_family(array):
     f = array[:, 2]
     l = list(f)
     s = set(l)
-    # print(s)
+    # pdb.set_trace()
     return s
 
 
@@ -80,36 +92,32 @@ def get_species(data_frame):
     combined = data_frame[3] + "_" + data_frame[4]
     l = list(combined)
     s = set(l)
-    # print(s)
+    # pdb.set_trace()
     return s
 
 
-def pearson_coof(array, col1, col2):
+def pearson_cooef(x, y):
     """
-    takes an array and which columns you wish to correlate
-    returns the pearson product-moment correlation coefficient
+    takes two columns of an array that you wish to correlate
+    returns the pearson product-moment correlation coefficient as an array
     """
-    x = array[1:, col1]
-    y = array[1:, col2]
-    value = np.corrcoef(x, y, rowvar=0)
+    value = np.corrcoef(x, y, rowvar=1)
     return value
-    return x, y
 
 
 def main():
-    my_file = open('Aves_Database_Aug_2015.csv', 'r')
+    my_file = open('/Users/home/Biol7800/assignment-16/answers/henicorhina/Aves_Database_Aug_2015.csv', 'r')
     lists = listify(my_file)
     my_array = array(lists)
-    frame(my_array)
+    # pdb.set_trace()
     l_cname = lists_df(my_file)
-    my_file.close()
-    # add index by common name
+    l_1 = l_cname[1][1:]  # corrects a minor error in lists_df
+    df = frame(l_cname[0], l_1, l_cname[2])
     families = get_family(my_array)
     species = get_species(DataFrame(my_array))
-    pear = pearson_coof(my_array, 10, 16)
-    print("the correlation coefficient of adult mass and egg mass is: {}".format(pear))
-    # convert to DataFrame with appropriate indices columns
-    data_frame = DataFrame(l_cname[0], index=l_cname[1][1:], columns=l_cname[2])
+    pear = pearson_cooef(df.egg_mass_g, df.adult_body_mass_g)
+    print("the correlation coefficient of adult mass and egg mass is: {}".format(pear[0][1]))
+    my_file.close()
 
 if __name__ == '__main__':
     main()
