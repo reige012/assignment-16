@@ -66,7 +66,7 @@ def array(my_list):
 
 def frame(array, i, c):
     """
-    takes array or list and converts ot pandas dataframe
+    takes array or list and converts to pandas dataframe
     i = index of rows, c = columns
     """
     data_frame = DataFrame(array, index=i, columns=c)

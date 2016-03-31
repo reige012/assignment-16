@@ -30,11 +30,18 @@ class TestTask2(unittest.TestCase):
         observed = task2.listify('name, item \n name2, item2')
         self.addTypeEqualityFunc(list, observed)
 
-    def test_lists_df(self):
+    def test_lists_df_2(self):
         """test that data type is correct"""
         my_file = open('Aves_Database_Aug_2015.csv', 'r')
         observed = task2.lists_df(my_file)
         self.addTypeEqualityFunc(list, observed[0])
+
+    def test_lists_df_2(self):
+        """test that list contains some data"""
+        my_file = open('Aves_Database_Aug_2015.csv', 'r')
+        obs = task2.lists_df(my_file)
+        observed = obs[0][0]
+        self.addTypeEqualityFunc(str, observed)
 
     def test_array(self):
         """ test that data type is correct"""
@@ -43,17 +50,25 @@ class TestTask2(unittest.TestCase):
 
     def test_frame1(self):
         """ test that data type is correct"""
-        cols = numpy.arange(0, 35)
-        observed = task2.frame(numpy.array([['name, item'],
-                                            ['name2, item2']]))
+        observed = task2.frame(numpy.array([['name', 'item'],
+                                            ['name2', 'item2'],
+                                            ['name3', 'item3']]),
+                                            i = ['1', '2', '3'],
+                                            c = ['1', '2'],)
         self.addTypeEqualityFunc(pandas.core.frame.DataFrame, observed)
 
     def test_frame2(self):
-        """test that length is correct"""
-        cols = numpy.arange(0, 35)
-        observed = len(task2.frame(numpy.array([['name', 'item'],
-                                                ['name2', 'item2']])))
-        self.assertEqual(observed, 2)
+        """
+        test that length is correct
+        'length' is the length of the index
+        """
+        obs = task2.frame(numpy.array([['name', 'item'],
+                                      ['name2', 'item2'],
+                                      ['name3', 'item3']]),
+                                      i = ['1', '2', '3'],
+                                      c = ['1', '2'],)
+        observed = len(obs)
+        self.assertEqual(observed, 3)
 
     def test_get_family(self):
         """test that I'm getting correct families in array"""
