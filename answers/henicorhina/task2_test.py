@@ -30,7 +30,7 @@ class TestTask2(unittest.TestCase):
         observed = task2.listify('name, item \n name2, item2')
         self.addTypeEqualityFunc(list, observed)
 
-    def test_lists_df_2(self):
+    def test_lists_df_1(self):
         """test that data type is correct"""
         my_file = open('Aves_Database_Aug_2015.csv', 'r')
         observed = task2.lists_df(my_file)
@@ -53,8 +53,8 @@ class TestTask2(unittest.TestCase):
         observed = task2.frame(numpy.array([['name', 'item'],
                                             ['name2', 'item2'],
                                             ['name3', 'item3']]),
-                                            i = ['1', '2', '3'],
-                                            c = ['1', '2'],)
+                               i=['1', '2', '3'],
+                               c=['1', '2'],)
         self.addTypeEqualityFunc(pandas.core.frame.DataFrame, observed)
 
     def test_frame2(self):
@@ -65,8 +65,8 @@ class TestTask2(unittest.TestCase):
         obs = task2.frame(numpy.array([['name', 'item'],
                                       ['name2', 'item2'],
                                       ['name3', 'item3']]),
-                                      i = ['1', '2', '3'],
-                                      c = ['1', '2'],)
+                          i=['1', '2', '3'],
+                          c=['1', '2'],)
         observed = len(obs)
         self.assertEqual(observed, 3)
 
