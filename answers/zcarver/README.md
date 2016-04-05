@@ -1,0 +1,3 @@
+Although assignment 16 task 2 (A16T2) does not take 'outside' files by argparse, it does read in CSV file into memory with pandas.read_csv. For this reason, argparse was not chosen for an input method and an example file was specified. Changing this file manually is cautioned against if it is too large of a file; title over dates is not labeled 'Dates' and is not the 0th column; is not date-fungal-substrate related, in that order.
+
+Simply, the program counts each line as an entry (excluding the header/titles); displays the second and third columns, the fungus and its substrate that it found in this specific case; displays year one of collection; and displays the time lapse from the last collected sample year in years.

@@ -1,0 +1,69 @@
+
+
+The effect of soil microbes on biomass production in marsh grasses Phragmites australis and Spartina patens.
+
+I.	Background
+II.	Objective
+III.	Critical parameters for data analysis
+IV.	Preliminary study
+V.	Experimental design
+VI.	Timeline
+
+Background
+There is much interest in restoring near-coast wetlands in Louisiana due to rapid land loss. These wetlands provide valuable ecosystem services, which are lost when the wetlands are converted to alternative land uses or replaced by open water. Several studies have documented improved restoration trajectories by incorporating soil ecological knowledge (Brown and Bedford 1997). Relatively little is known about how the biological state of the soil may effect wetland restoration efforts, and symbiotic fungi have frequently been wetland plant species (Daleo, Kandelepas, ). However the effects of AMF on the species proposed in this study is unknown. >>This discrepancy highlights a need to study the effects of soil biota on plants at the species level.<< Due to the demonstrated difficulty of successful restoration, and high expense associated with these projects, it is necessary to determine if there is any impact of soil biological activity on the productivity of wetland vegetation in these habitats.
+Arbuscular mycorrhizal fungi (AMF) are symbiotic associates of 80% of plants, positively contributing to nutrient uptake and improving plant growth. I have identified AMF in the roots of S. patens and P. australis, suggesting this symbiosis may play a role in the productivity of these species. Species of AMF are specific to plant species (van der Heijn, Nature) and may interact with other microbes in a consortum (Burke) so the source of innocula for an experiment needs to be from the source of the plant.
+This study will provide information that will help to determine what soils may be appropriate for achieving wetland restoration goals. Brown and Bedford found that soil transplants reduced the occurrence of cattail (Typha spp.) and increased wetland plant cover of species providing valuable habitat cover.
+In the future, wetland preservation will require larger restoration projects. Research contributing to decreasing costs and increasing the success of these efforts will be required to meet restoration goals. For example, Siliman found an improvement of wetland restoration success by planting propagules in clumps rather than distributed individuals. Improvements in wetland restoration technology that maximize the productivity of restoration efforts and resources are critical for conserving wetland ecosystems.
+
+Objective
+This study examines the impact of biological aspects of the soil on the growth of three wetland grasses. Both species included in the experiment have been shown to form mycorrhizal associations, but the significance of the symbiosis in wetlands is not well understood. Additionally, many grasses secrete flavonoids from their roots which attract and support symbiotic microorganisms. Rhizoctonia-like plant root pathogens have been reported in some Spartina species, but the impact of root pathogens in wetland species has not been thoroughly studied.
+The current paradigm in wetland restoration is that by achieving a favorable hydrology and introducing wetland plant propagules a functional wetland will develop, regardless of the biological state of the soil. Thus, this experiment seeks to determine first if there are any differences between wetland grasses grown under different soil conditions. If our results find a significant difference, follow up studies will investigate the presence of symbiotic microorganisms and root exudate enzymes.
+Hypothesis
+The plants will grow better in non-sterilized soil. An increased above ground biomass and foliar nitrogen concentrations are expected in non-sterilized treatments.
+Methods
+
+I. Objective
+The objective of this experiment is to determine if AMF influence the growth of plants Phragmites australis and Spartina patens. I have identified mycorrhiza (AMF) in these plants and I would like to know how the AMF affect plant growth, if these effects are species-specific (both plant and AMF), and if the effects change with water level. We expect that plants grown in a soil with biota removed via sterilization by benomyl will have a lower biomass than plants grown in non-sterilized soil, thus suggesting that AMF may play a role in the plant fitness. Although it is well understood that AMF improve plant growth for mycorrhizal terrestrial plants, this effect has not been demonstrated for P. australis and S. patens.
+This experiment seeks to test:
+1)	AMF experiment. Do plants grown in sterilized soil have an equivalent growth to plants grown in non-sterilized soil? Does this improved growth correspond to mycorrhizal colonization of the roots of the plants?
+a.	Plants should be grown in a conglomerate soil to equalize nutrients.
+b.	Multiple wetland sites are needed for replication (blocks?)
+2)	Transplant experiment. Is the benefit of AMF plant-specific? Will Phragmites grown in Spartina soil and Spartina grown in Phragmites soil grow as well as those plants would grow in soil from a homogenous stand?
+a.	Other selective properties of the soil besides AMF, such as enzymes or pathogens, could play a role here.
+b.	Is there below-ground competition?
+i.	If the plants are grown in the same pot, pulled apart by twine so they don’t shade, will AMF selectively benefit one over the other?
+1.	Pot is divided with a semi-permeable membrane penetrable to AMF
+3)	Water-level experiment. Are these effects the same at different water levels?
+a.	Water levels : 0cm from soil surface and -30 cm from surface (80% soil moisture?)
+4)	Within-treatment variability.
+a.	Are the results consistent from within 3 different sites?
+II. Critical Parameters for Data Analysis
+Plant height, diameters, biomass of different organs (leaf, shoot, fibrous root and taproot); physiological parameters of plants such as plant nutrients; biodiversity of AMF in both soil and plant roots.
+
+III. Preliminary Study
+Are the nutrient levels of the soils equivalent?
+●	We will analyze the soils for nutrients, but probably not… Is this a problem?
+Are the species mycorrhizal in the field?
+●	Yes
+Was soil sterilization effective?
+●	Check roots before and during experiment (extra pots are needed for destructive sampling)
+What are the effective levels of fungicide (benomyl)?
+●	??
+How do we insure plants acquired for the study do not have AMF colonization prior to treatment?
+●	We will kill AMF at the start of the experiment after the plant is put in the pot, and re-apply benomyl as necessary.
+
+IV. Experimental Design
+How will the soil be processed before the study?
+●	The top 20/30cm soils from the field site, then cut and mixed well in a bucket.
+●	The top 10 cm should not be discarded as to preserve AMF innocula present in the soil.
+    Use benomyl to kill AMF after the plant germinate (at this time, the competition maybe exist).
+How will the plants be acquired for the study?
+●	Grown from rhizome in water for at least 10 days.
+How and when will fungicide be applied during the study?
+●	As part of watering regime.
+Following planting
+
+
+Brown, Stephen C., and Barbara L. Bedford. 1997. “Restoration of Wetland Vegetation with Transplanted Wetland Soil: An Experimental Study.” Wetlands 17 (3): 424–37. doi:10.1007/BF03161432.
+
+Gutknecht, Jessica L M, Robert M. Goodman, and Teri C. Balser. 2006. “Linking Soil Process and Microbial Ecology in Freshwater Wetland Ecosystems.” Plant and Soil 289 (1-2): 17–34. doi:10.1007/s11104-006-9105-4.
